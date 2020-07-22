@@ -21,6 +21,12 @@ The number of nodes in the tree is between 1 and 1000.
 node.val is 0 or 1.
 The answer will not exceed 2^31 - 1.
 
+分析：该问题可以分解为两个部分：
+- 找到root to leaf的所有路径，这一部分可以使用DFS
+- 将所有路径的二进制转为十进制求和
+分开来做的花需要O（2N）的时间复杂度。这里可以直接在遍历过程中进行计算，并返回对应的结果。考虑到二进制每增加一位，就是\*2，可以每加深一层，结果\*2.
+
+
 ```python
 class Solution:
     def sumRootToLeaf(self, root: TreeNode,val=0) -> int:
