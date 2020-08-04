@@ -26,3 +26,19 @@
 # 0 <= t.length <= 10^4
 # Both strings consists only of lowercase characters.
 
+# 分析：给定字符串s & t，问s是不是t的子序列。子序列是从中抽掉某些元素后可以得到的序列。
+# 方法；一：可以遍历字符串t，同时设置一个指针指向s，按顺序比较s的字符，若指针长度等于s的长度，则表明为子序列。
+
+class Solution:
+    def isSubsequence(self, s: str, t: str) -> bool:
+        if not s:return True
+        n=0
+        for cha in t:
+            if cha ==s[n]:n+=1
+            if n==len(s):return True
+        return False
+
+
+
+
+
