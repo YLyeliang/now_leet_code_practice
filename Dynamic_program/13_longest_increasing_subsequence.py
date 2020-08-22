@@ -32,10 +32,6 @@ class Solution:
                 j+=1
         return dp[-1]
 
-
-
-
-
 # 二分搜索解法：elegant
 # Runtime:40ms (amazing!!!!!!!!!)
 class Solution:
