@@ -13,7 +13,7 @@
 # Note:
 #
 # Bonus point if you are able to do this using only O(n) extra space, where n is the total number of rows in the triangle.
-
+#
 # 给定三角形，找到自顶向下的最小路径和。每一次可以移动到下一行相邻的数字。
 # 分析：很典型的动态规划问题，这里可以建立一个shape等于三角形的dp数组，其中dp[i]表示第i行时的路径和，当i>=2时，由于i=1有两个值，i=2时会有一个重叠值，这里重叠的值可以取最小。最后返回最后一行的min即可。
 

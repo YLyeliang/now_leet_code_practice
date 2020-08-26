@@ -28,20 +28,20 @@
 # to be continued
 class Solution:
     def numDecodings(self, s: str) -> int:
-        num=[i for i in range(1,27)]
-        if s=='':return 0
-        length=len(s)
-        dp=[1]
+        num = [i for i in range(1, 27)]
+        if s == '': return 0
+        length = len(s)
+        dp = [1]
         dp += [1] if int(s[0]) in num else [0]
-        for i in range(2,length+1):
-            dp+=[0]
-            if int(s[i-1]) in num:
-                dp[i]+=dp[i-1]
-            if int(s[i-2]+s[i-1]) >=10 and int(s[i-2]+s[i-1]) <=26:
-                dp[i]+=dp[i-2]
-            if s[i-2]==0 and s[i-1]==0:return 0
+        for i in range(2, length + 1):
+            dp += [0]
+            if int(s[i - 1]) in num:
+                dp[i] += dp[i - 1]
+            if int(s[i - 2] + s[i - 1]) >= 10 and int(s[i - 2] + s[i - 1]) <= 26:
+                dp[i] += dp[i - 2]
+            if s[i - 2] == 0 and s[i - 1] == 0: return 0
         return dp[-1]
 
-sol=Solution()
-print(sol.numDecodings('12'))
 
+sol = Solution()
+print(sol.numDecodings('12'))
