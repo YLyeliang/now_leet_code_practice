@@ -53,19 +53,20 @@ class Solution:
             sum += num
 
         if sum & 1 == 1: return False
-        sum/=2
-        n =len(nums)
-        dp= [[False]*(sum+1) for _ in range(n+1)]
-        dp[0][0]=True
-        for  i in range(n+1):
-            dp[i][0]=True
+        sum /= 2
+        n = len(nums)
+        dp = [[False] * (sum + 1) for _ in range(n + 1)]
+        dp[0][0] = True
+        for i in range(n + 1):
+            dp[i][0] = True
 
-        for i in range(1,n+1):
-            for j in range(1,sum+1):
-                if j>=nums[i-1]:
-                    dp[i][j]=dp[i][j] or dp[i-1][j-nums[i-1]]
+        for i in range(1, n + 1):
+            for j in range(1, sum + 1):
+                if j >= nums[i - 1]:
+                    dp[i][j] = dp[i][j] or dp[i - 1][j - nums[i - 1]]
 
         return dp[n][sum]
+
 
 class Solution(object):
     def canPartition(self, nums):
@@ -76,9 +77,11 @@ class Solution(object):
         possible_sums = {0}
         for n in nums:
             possible_sums.update({(v + n) for v in possible_sums})
-        return (sum(nums) / 2.)  in possible_sums
-sol=Solution()
-sol.canPartition([1,5,11,5])
+        return (sum(nums) / 2.) in possible_sums
+
+
+sol = Solution()
+sol.canPartition([1, 5, 11, 5])
 
 # public boolean canPartition(int[] nums) {
 #     int sum = 0;
