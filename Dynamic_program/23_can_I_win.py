@@ -34,15 +34,34 @@
 
 # 问题：在“100游戏”中，两个玩家轮流加1-10的数。先达到或超过100的玩家赢。 现在修改规则，不能使用重复的数字。例如，从1-15选，谁先>=100，赢。
 # 给定两个整数 maxChoosableInter and desiredTotal, 如果先手的人赢，返回true otherwise false. 假设两者都是最优玩法。
-# 分析：这是一个DP问题，想象一下，如果先手的人要赢，那么后手的人最后一次选择的数字j必定满足 total-j in 剩下的数。
-# 即 total-j in nums.其中nums = range(maxChoosableInter)。那么，dp[total]=dp[total-j] in nums
+# 分析：这是一个DP问题，想象一下，如果先手的人要赢，那么后手的人最后一次选择的数字j必定满足 j < desiredTotal - sum_of_prev，
+# 先手的人最后一次选的数字i必定满足 i>= desiredTotal - sum_of_prev 。由于都是最优玩法，假设每个人都是从最大的开始选。
+# 先手的人获胜条件为  i=nums[-1]>=desiredTotal - sum_of_prev. 其中nums = range(1,maxChoosableInter)
+# 那么，递归解法就是让函数递归地减少desiredTotal,来判断 nums[-1] >=desiredTotal - nums[i].
+# 。那么，dp[total]=dp[total-j] in nums
 
 class Solution:
     def canIWin(self, maxChoosableInteger: int, desiredTotal: int) -> bool:
-        nums = [for i in range(1, maxChoosableInteger + 1)]
+        # 数列求和
+        if (1 + maxChoosableInteger) * maxChoosableInteger / 2 < desiredTotal: return False
+        self.memo = {}
+        return self.helper(range(1, maxChoosableInteger + 1), desiredTotal)
 
-        a = 1
+    def helper(self, nums, desiredTotal):
+        hash = str(nums)
+        if hash in self.memo:
+            return self.memo[hash]
 
+        if nums[-1] >= desiredTotal:
+            return True
+        nums=list(nums)
+        for i in range(len(nums)):
+            if not self.helper(nums[:i] + nums[i+1:], desiredTotal - nums[i]):
+                self.memo[hash] = True
+                return True
+        self.memo[hash] = False
+        return False
 
-sol = Solution()
-sol.canIWin(10, 11)
+sol =Solution()
+a=sol.canIWin(20,200)
+print(a)
