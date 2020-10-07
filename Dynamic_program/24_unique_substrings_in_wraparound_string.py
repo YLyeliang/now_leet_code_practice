@@ -22,9 +22,13 @@
 # Explanation: There are six substrings "z", "a", "b", "za", "ab", "zab" of string "zab" in the string s.
 
 # 问题：环绕字符串中的唯一子串。考虑一个无限环绕的字符串s:a-z, 现在有另一个字符串p. 找出有多少个独立非空的p的子串能在s中表示.
-# 分析：
+# 分析：利用动态规划进行分析。构建长度为26的DP数组（a-z)，考虑dp[i]表示以第i个字符结尾的最大子串个数。构建a-z的字符串s。
+# 遍历p,计算maxlengthCur+=1 if s[i]-s[i-1] ==1 (即两个字符串相邻) or s[i-1]-s[i]==25 (两个字符串首尾相接),否则令maxlengthCur=1。
+# 然后计算p[i]距字符a的距离 s[p[i]]-s['a'],表示字符p[i]在26个字母中的索引dp[p[i]].dp[p[i]]=max(dp[p[i]],maxlengthCur)
+# 为什么maxlengthCur+=1? 以zab为例，以z结尾的子串为1，计算za首尾相接，那么a之前的所有子串加上a依然为子串，同时出现了新的子串a。
 
 
+# 暴力：不一定全部解出
 class Solution:
     def findSubstringInWraproundString(self, p: str) -> int:
         a = 'abcdefghijklmnopqrstuvwxyz' * 10
@@ -44,12 +48,12 @@ class Solution:
         maxlengthCur = 0
 
         for i in range(len(p)):
-            if i > 0 and (hash[p[i]]-hash[p[i-1]] ==1 or hash[p[i-1]]-hash[p[i]]==25):
-                maxlengthCur+=1
+            if i > 0 and (hash[p[i]] - hash[p[i - 1]] == 1 or hash[p[i - 1]] - hash[p[i]] == 25):
+                maxlengthCur += 1
             else:
-                maxlengthCur=1
-            index= hash[p[i]]-hash['a']
-            count[index]=max(count[index],maxlengthCur)
+                maxlengthCur = 1
+            index = hash[p[i]] - hash['a']
+            count[index] = max(count[index], maxlengthCur)
 
         res = sum(count)
         return res

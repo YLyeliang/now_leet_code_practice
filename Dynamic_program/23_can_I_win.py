@@ -38,7 +38,7 @@
 # 先手的人最后一次选的数字i必定满足 i>= desiredTotal - sum_of_prev 。由于都是最优玩法，假设每个人都是从最大的开始选。
 # 先手的人获胜条件为  i=nums[-1]>=desiredTotal - sum_of_prev. 其中nums = range(1,maxChoosableInter)
 # 那么，递归解法就是让函数递归地减少desiredTotal,来判断 nums[-1] >=desiredTotal - nums[i].
-# 。那么，dp[total]=dp[total-j] in nums
+# 那么，dp[total]=dp[total-j] in nums
 
 class Solution:
     def canIWin(self, maxChoosableInteger: int, desiredTotal: int) -> bool:
