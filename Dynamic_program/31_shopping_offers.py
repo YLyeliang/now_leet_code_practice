@@ -34,13 +34,28 @@
 # You are not allowed to buy more items than you want, even if that would lower the overall price.
 
 
-# 问题：
-# 分析：
-#
+# 问题：给定三个输入price, special, needs. 其中Price为数字list，表示索引为i的物品的价格，special为一个list(list),
+# 其中每个List为打包价格，list中最后一个数字表示花多少钱能买多少物品。needs为我们的需求。
+# 求怎样花最少的钱达到needs. 不能买超过需求的数量。
+
+# 分析：考虑首先使用单价的方式进行购买。购买完毕之后，利用DFS方法，使用special中的打包价进行替换，来对比价格。同时，将数量：价格存入memo，
+# 减少重复计算，
 #
 from typing import List
 
 
 class Solution:
     def shoppingOffers(self, price: List[int], special: List[List[int]], needs: List[int]) -> int:
+        d = {}
 
+        def dfs(cur):
+            val = sum(cur[i] * price[i] for i in range(len(needs)))  # cost without special
+            for spec in special:
+                tmp = [cur[j] - spec[j] for j in range(len(needs))]
+                if min(tmp) >= 0:  # skip deals that exceed needs
+                    val = min(val, d.get(tuple(tmp), dfs(tmp)) + spec[
+                        -1])  # .get check the dictionary first for result, otherwise perform dfs.
+            d[tuple(cur)] = val
+            return val
+
+        return dfs(needs)
