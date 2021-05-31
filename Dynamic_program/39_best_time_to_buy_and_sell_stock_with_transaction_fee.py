@@ -39,6 +39,7 @@
 # T[i][k][1] = max(T[i-1][k][1], T[i-1][k][0] - prices[i])
 
 from typing import List
+import sys
 
 
 class Solution:
@@ -49,3 +50,4 @@ class Solution:
             T_ik0 = max(T_ik0_old, T_ik1 + price)
             T_ik1 = max(T_ik1, T_ik0_old - price - fee)
         return T_ik0
+
