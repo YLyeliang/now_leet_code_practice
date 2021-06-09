@@ -61,6 +61,11 @@
 # 求largest axis-aligned plus sign of order k. 即坐标对齐的数为1的"十"字的长度。
 
 # 分析：给定n的情况下，由于结果的特性，最长的k不会超过ceil(n/2),
+# 考虑生成一个grid矩阵，其中值grid[i][j]当前位置的最大长度k,所有值初始化为N，且对mines中的坐标元素置0。
+# 对每个位置(i,j)，计算四个方向上的1的最大长度。并将grid[i][j]置为其四个方向上的最小值。具体做法为：
+# for i in range(N),对每一个i，分别从两端计算最大长度j,k；使用四个变量l,r,u,d表示四个方向，每个方向的初始值为0.grid[i][j],grid[i][k]表示第i行的两端；
+# grid[j][i],grid[j][k]表示第i列的上下两端，每次迭代时若grid当前值不等于0，则四个方向+=1，否则该方向变量重新置0，如此迭代即可。
+# 取grid的最大值为最终结果。
 from typing import List
 
 
@@ -71,12 +76,15 @@ class Solution:
         :type mines: List[List[int]]
         :rtype: int
         """
+        # 生成 N x N 矩阵，大小为N
         grid = [[N] * N for i in range(N)]
 
+        # 对Mines list里的坐标上的值置0
         for m in mines:
             grid[m[0]][m[1]] = 0
 
         for i in range(N):
+            # 四个方向
             l, r, u, d = 0, 0, 0, 0
 
             for j, k in zip(range(N), reversed(range(N))):
@@ -105,3 +113,10 @@ class Solution:
 
         return res
 
+
+if __name__ == '__main__':
+
+    n = 5
+    mines = [[4, 2]]
+    solution = Solution()
+    solution.orderOfLargestPlusSign(n, mines)
