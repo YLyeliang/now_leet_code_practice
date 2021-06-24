@@ -26,7 +26,10 @@
 
 # 分析： 均值= sum(x_i)/len(x_i)
 # 该题类体于切割钢筋求最大价格。不同之处在于此处是分成至多k个，可以是1-k内的最优值。
-# DP： dp[i][j]表示
+# DP： 使用 top-down with memoization方法，其中memo[n,k]表示长为n的数组分成至多k个时的最大价格
+# memo[n,k] = max(memo[n,k], memo[n-1,k-1] + cur / 1, memo[n-2,k-1] + cur /2, memo[n-i,k-1] + cur / i)
+# 即，长为n分成至多k的最大价格 = max(长为n-i分成至多k-1个的价格)+ price(i)
+# 其中, cur /float(n-i)表示
 from typing import List
 
 
@@ -41,7 +44,7 @@ class Solution:
                 memo[n, k] = sum(nums[:n]) / float(n)
                 return memo[n, k]
             cur, memo[n, k] = 0, 0
-            for i in range(n - 1, 0, -1):
+            for i in range(n - 1, 0, -1):  # cur += nums[i] memo[n,k] = max(memo[n,k], search(i,k-1) + cur/ float(n-i))
                 cur += nums[i]
                 memo[n, k] = max(memo[n, k], search(i, k - 1) + cur / float(n - i))
             return memo[n, k]
