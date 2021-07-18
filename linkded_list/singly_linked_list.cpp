@@ -96,9 +96,9 @@ LinkedList LinkedListReplace(LinkedList L, int x, int k) {
 // 插入
 // 链表的插入操作主要分为查找到第i个位置，将该位置的next指针修改为指向我们新插入的结点，而新插入的结点next指针指向我们i+1个位置的结点。
 // 其操作方式可以设置一个前驱结点，利用循环找到第i个位置，再进行插入。
-LinkedList LinkedListInsert(LinkedList L, int i, x) {
+LinkedList LinkedListInsert(LinkedList L, int i, int x) {
     Node *pre; // 前驱结点，来遍历链表
-    for (int temp_i = 1; temp < i; temp_i++)
+    for (int temp_i = 1; temp_i< i; temp_i++)
         pre = pre->next;
     // pre到达插入位置
     Node *p;
@@ -121,6 +121,6 @@ LinkedList LinkedListDelete(LinkedList L, int x) {
         p = p->next;
     }
     pre->next = p->next;    // 将前驱指向删除结点的后继
-    fread(p);
+    free(p);
     return L;
 }
