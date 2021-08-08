@@ -8,7 +8,7 @@ def isCircle(Node):
         return False
     first = Node
     second = Node
-    while first.next and second.next.next:
+    while second.next and second.next.next:
         first = first.next
         second = second.next.next
         tag = first == second

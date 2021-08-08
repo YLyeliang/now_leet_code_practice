@@ -1,0 +1,1 @@
+![图片](image/PascalTriangleAnimated2.gif)
