@@ -10,6 +10,8 @@ add_executable(now_leet_code_practice
 #        linkded_list/simple_list.cpp "tree/1_Path sum II.cpp" "array/1_Plus One.cpp" "array/2_Merge sorted array.cpp"
 #        "array/3_pascal triangle.cpp" "array/4_Pascal triangleII.cpp" "array/5_Best time to buy and sell stock II.cpp"
 #        "array/6_single number.cpp" "array/7_Two sum II.cpp" "array/8_Majority Element.cpp" "array/9_Count Primes.cpp" "array/10_Contains Duplicate.cpp" "array/11_Contains Duplicate II.cpp" "array/12_Summary ranges.cpp" "array/13_Missing Number.cpp"
-        "14_Move Zeroes.cpp" "14_Intersection of Two Arrays.cpp")
+#        "array/14_Move Zeroes.cpp" "array/15_Intersection of Two Arrays.cpp" "array/16_Intersection of Two Arrays II.cpp"
+#        "array/ 17_Third Maximum Number.cpp"
+        "array/18_Find All Numbers Disappeared in an Array.cpp" "array/19_Minimum Moves to Equal Array Elements.cpp")
 
 target_link_libraries(now_leet_code_practice)
