@@ -12,6 +12,6 @@ add_executable(now_leet_code_practice
 #        "array/6_single number.cpp" "array/7_Two sum II.cpp" "array/8_Majority Element.cpp" "array/9_Count Primes.cpp" "array/10_Contains Duplicate.cpp" "array/11_Contains Duplicate II.cpp" "array/12_Summary ranges.cpp" "array/13_Missing Number.cpp"
 #        "array/14_Move Zeroes.cpp" "array/15_Intersection of Two Arrays.cpp" "array/16_Intersection of Two Arrays II.cpp"
 #        "array/ 17_Third Maximum Number.cpp"
-        "array/18_Find All Numbers Disappeared in an Array.cpp" "array/19_Minimum Moves to Equal Array Elements.cpp")
+        "array/18_Find All Numbers Disappeared in an Array.cpp" "array/19_Minimum Moves to Equal Array Elements.cpp" "array/20_Assign cookies.cpp" "array/21_Container With Most Water.cpp")
 
 target_link_libraries(now_leet_code_practice)
