@@ -14,6 +14,6 @@ add_executable(now_leet_code_practice
 #        "array/ 17_Third Maximum Number.cpp"
 #        "array/18_Find All Numbers Disappeared in an Array.cpp" "array/19_Minimum Moves to Equal Array Elements.cpp"
 #        "array/20_Assign cookies.cpp" "array/21_Container With Most Water.cpp" array/22_3sum.cpp "array/23_3sum closest.cpp"
-        array/24_4sum.cpp)
+        array/24_4sum.cpp string/1_longest_common_prefix.cpp string/2_length_of_last_word.cpp string/3_add_binary.cpp)
 
 target_link_libraries(now_leet_code_practice)
