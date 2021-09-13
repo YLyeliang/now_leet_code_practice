@@ -17,6 +17,7 @@ add_executable(now_leet_code_practice
 #        array/24_4sum.cpp string/1_longest_common_prefix.cpp string/2_length_of_last_word.cpp string/3_add_binary.cpp
 #        string/4_valid_palindrome.cpp
 #        string/5_excel_sheet_column_title.cpp "string/6_Excel Sheet Column Number.cpp" string/7_isomorphic_strings.cpp string/8_valid_Anagram.cpp string/9_word_pattern.cpp string/10_reverse_string.cpp string/11_reverse_vowels_of_a_string.cpp
-        string/12_random_note.cpp string/13_first_unique_character_in_string.cpp string/14_find_the_difference.cpp)
+#        string/12_random_note.cpp string/13_first_unique_character_in_string.cpp string/14_find_the_difference.cpp
+        string/15_longest_palindrome.cpp)
 
 target_link_libraries(now_leet_code_practice)
