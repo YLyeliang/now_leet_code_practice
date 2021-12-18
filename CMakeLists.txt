@@ -20,6 +20,7 @@ add_executable(now_leet_code_practice
 #        string/12_random_note.cpp string/13_first_unique_character_in_string.cpp string/14_find_the_difference.cpp
 #        string/15_longest_palindrome.cpp string/16_Fizz_Buzz.cpp string/17_add_string.cpp string/18_number_of_segments_in_string.cpp
 #        string/19_repeated_substring_pattern.cpp
-        string/20_keyboard_row.cpp string/21_student_attendance_record_I.cpp string/22_reverse_words_in_string_III.cpp string/23_minimum_index_sum_of_two_lists.cpp string/24_valid_palindrome_II.cpp)
+#        string/20_keyboard_row.cpp string/21_student_attendance_record_I.cpp string/22_reverse_words_in_string_III.cpp string/23_minimum_index_sum_of_two_lists.cpp string/24_valid_palindrome_II.cpp Dynamic_program/4_1_jump_games.cpp Dynamic_program/4_2_jump_gamesII.cpp Dynamic_program/5_1_maximum_subarray.cpp
+        "Dynamic_program/5_2_Maximum Sum Circular Subarray.cpp")
 
 target_link_libraries(now_leet_code_practice)
