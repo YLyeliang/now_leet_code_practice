@@ -22,6 +22,7 @@
 //Input: nums = [5,4,-1,7,8]
 //Output: 23
 
+// 问题： 给定数组，求连续子数组的最大和。
 
 // DP方法， smax = 0
 // dp[i] = max(dp[i-1] + nums[i] if dp[i-1] > 0 else dp[i] = nums[i], smax)
