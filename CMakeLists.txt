@@ -23,6 +23,7 @@ add_executable(now_leet_code_practice
 #        string/20_keyboard_row.cpp string/21_student_attendance_record_I.cpp string/22_reverse_words_in_string_III.cpp string/23_minimum_index_sum_of_two_lists.cpp string/24_valid_palindrome_II.cpp Dynamic_program/4_1_jump_games.cpp Dynamic_program/4_2_jump_gamesII.cpp Dynamic_program/5_1_maximum_subarray.cpp
 #        "Dynamic_program/5_2_Maximum Sum Circular Subarray.cpp" "Dynamic_program/6_2_Maximum Length of Subarray With Positive Product.cpp" "Dynamic_program/7_1_Best Sightseeing Pair.cpp" Dynamic_program/7_3_best_time_to_buy_and_sell_stock_II.cpp Dynamic_program/8_1_word_break.cpp
 #        Dynamic_program/8_2_Trapping_rain_water.cpp Dynamic_program/9_1_arithmetic_slices.cpp Dynamic_program/9_2_decode_ways.cpp Dynamic_program/10_2_ugly_number_II.cpp Dynamic_program/10_3_unique_binary_search_trees.cpp Dynamic_program/11_1_pascal_triangle.cpp Dynamic_program/11_2_pascal_triangle_II.cpp Dynamic_program/12_1_minimum_falling_path_sum.cpp Dynamic_program/12_2_Triangle.cpp array/25_subarray_sum_equals_k.cpp
-        array/25_longest_substring_without_repeating_characters.cpp)
+#        array/25_longest_substring_without_repeating_characters.cpp
+        "Dynamic_program/10_4_Unique Binary Search Trees II.cpp" "Dynamic_program/13_1_matrix block sum.cpp" "Dynamic_program/13_2_range sum query mutable.cpp")
 
 target_link_libraries(now_leet_code_practice)
