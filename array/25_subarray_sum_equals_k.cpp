@@ -24,6 +24,8 @@
 //-1000 <= nums[i] <= 1000
 //-107 <= k <= 107
 
+// 1 2 3 -2 -1 3
+
 // 问题：找到和为k的连续子数组的个数
 
 // 方法：前缀和+哈希表
@@ -34,6 +36,7 @@
 
 
 #include "iostream"
+#include "vector"
 #include "map"
 
 using namespace std;
@@ -41,13 +44,13 @@ using namespace std;
 
 class Solution {
 public:
-    int subarraySum(vector<int>& nums, int k) {
-        int count = 0,sums = 0;
-        std::map<int,int> pre_sum;
+    int subarraySum(vector<int> &nums, int k) {
+        int count = 0, sums = 0;
+        std::map<int, int> pre_sum;
         pre_sum[0]++;
-        for (int i=0; i<=nums.size();i++){
-            sums+=nums[i];
-            count +=pre_sum[sums-k];
+        for (int i = 0; i <= nums.size(); i++) {
+            sums += nums[i];
+            count += pre_sum[sums - k];
             pre_sum[sums]++;
         }
         return count;
