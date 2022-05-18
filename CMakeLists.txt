@@ -28,8 +28,10 @@ add_executable(now_leet_code_practice
         #        top100/m_letter_combinations_of_a_phone_number.cpp top100/m_generate_parentheses.cpp "top100/m_Search in Rotated Sorted Array.cpp" "top100/m_Find First and Last Position of Element in Sorted Array.cpp" "top100/m_Combination sum.cpp"
         #        backtrack/m_permutations.cpp backtrack/m_subsets.cpp backtrack/m_subsets_II.cpp backtrack/m_permutations_II.cpp "backtrack/m_combination sum II.cpp"
         #        "backtrack/m_palindrome partitioning.cpp"
-#        test/test.cpp
-        "top100/m_search 2D matrix.cpp"
+        #        test/test.cpp
+        #        "top100/m_search 2D matrix.cpp"
+        #        "top_interview/h_largest rectangle in histogram.cpp"
+        "top100/m_Longest Consecutive Sequence.cpp"
         )
 
 target_link_libraries(now_leet_code_practice)
