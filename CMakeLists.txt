@@ -31,7 +31,8 @@ add_executable(now_leet_code_practice
         #        test/test.cpp
         #        "top100/m_search 2D matrix.cpp"
         #        "top_interview/h_largest rectangle in histogram.cpp"
-        "top100/m_Longest Consecutive Sequence.cpp"
+#        "top100/m_Longest Consecutive Sequence.cpp"
+        test/thread_test.cpp
         )
 
 target_link_libraries(now_leet_code_practice)

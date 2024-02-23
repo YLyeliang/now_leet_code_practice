@@ -16,7 +16,7 @@
 // 问题：给定n对括号，求合法的所有括号组合。
 
 // 方法：
-// 1. simple recursive method.
+// 1. simple recursive method.深度优先搜索
 // 用n, m表示剩下的( )数量. 构建一个递归函数，函数每次调用时if m > 0,增加) if n >0, 增加(
 // why?
 
